@@ -105,33 +105,3 @@ public struct VPageView<Pages>: View where Pages: View {
     }
 }
 
-#if DEBUG
-struct PageView_Previews: PreviewProvider {
-    static var previews: some View {
-        let v1 = VStack {
-            Image(systemName: "heart.fill").resizable()
-                .scaledToFit()
-                .frame(width: 100, height: 100)
-                .foregroundColor(.red)
-            Text("Some title")
-                .font(.system(size: 24))
-                .fontWeight(.bold)
-        }
-        
-        let v2 = VStack {
-            Image(systemName: "heart").resizable()
-                .scaledToFit()
-                .frame(width: 100, height: 100)
-                .foregroundColor(.red)
-            Text("Some title")
-                .font(.system(size: 22))
-                .fontWeight(.bold)
-                .foregroundColor(.gray)
-        }
-        return HPageView {
-            v1
-            v2
-        }
-    }
-}
-#endif
